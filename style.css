@@ -1,0 +1,1709 @@
+@font-face {
+    font-family: 'Gilroy-Med';
+    src: url(fonts/Gilroy-Medium.woff);
+}
+@font-face {
+    font-family: 'Gilroy-Reg';
+    src: url(fonts/Gilroy-Regular.woff);
+}
+@font-face {
+    font-family: 'Gilroy-SBold';
+    src: url(fonts/Gilroy-SemiBold.woff);
+}
+@font-face {
+    font-family: 'NotoSerif-Bold';
+    src: url(fonts/NotoSerif-Bold.woff);
+}
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    display: flex;
+    flex-direction: column;
+}
+header{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 48.8vmax;
+    background-image: url(images/header.png);
+    background-size: cover;
+}
+nav{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    height: 5.4vmax;
+}
+nav>div{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 57.2vmax;
+    height: 100%;
+}
+#logo{
+    width: 11vmax;
+}
+#navLeft{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    font-family: 'Gilroy-Reg';
+    font-size: 0.7vmax;
+    color: white;
+    width: 16.5vmax;
+}
+
+#logIn{
+    font-family: 'Gilroy-Reg';
+    font-size: 0.7vmax;
+    cursor: pointer;
+    color: white;
+}
+
+#navRight{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    font-family: 'Gilroy-Reg';
+    font-size: 0.7vmax;
+    width: 17.8vmax;
+    color: white;
+}
+#search{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    width: 3.85vmax;
+}
+#search>img{
+    height: 1vmax;
+}
+#icons{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 3.2vmax;
+}
+#icons>img{
+    height: 0.8vmax;
+}
+
+#emty1{
+    width: 100%;
+    height: 26vmax;
+}
+#headerBtn{
+    display: flex;
+    align-self: center;
+    align-items: center;
+    flex-direction: column;
+    justify-content: space-between;
+    color: white;
+    height: 7.3vmax;
+}
+#headerBtn>span{
+    font-family: 'NotoSerif-Bold';
+    font-size: 1.85vmax;
+    line-height: 1;
+}
+#toCatalog{
+    width: 13.5vmax;
+    height: 2.8vmax;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-transform: uppercase;
+    background-color: transparent;
+    border: 0.1vmax solid white;
+    color: white;
+    font-family: 'Gilroy-Med';
+    font-size: 0.9vmax;
+    letter-spacing: 0.1vmax;
+}
+#toCatalog:hover{
+    background-color: rgba(1,1,1,0.5);
+    border: transparent;
+}
+
+#headerEmty{
+    height: 4vmax;
+    width: 100%;
+}
+#headerEnd{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+#topHr{
+    width: 100%;
+    height: 0.1vmax;
+    background-color: white;
+    border: transparent;
+}
+#hrEmty{
+    height: 1.4vmax;
+    width: 100%;
+}
+#logos{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 57vmax;
+    height: 3.2vmax;
+}
+.logoEnd{
+    width: 8vmax;
+}
+.hrEnd{
+    width: 0.1vmax;
+    height: 100%;
+    border: transparent;
+    background-color: white;
+}
+
+#sorted{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    align-self: center;
+    width: 100%;
+    height: 55.2vmax;
+}
+#centerSorted{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    width: 57.2vmax;
+    height: 44vmax;
+}
+#headSorted{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    width: 21.5vmax;
+    height: 4vmax;
+}
+#headSorted1{
+    font-family: 'Gilroy-Reg';
+    font-size: 1.1vmax;
+    line-height: 0.9;
+}
+#headSorted2{
+    font-family: 'NotoSerif-Bold';
+    font-size: 1.5vmax;
+    letter-spacing: 0.02vmax;
+}
+#sort{
+    display: flex;
+    align-items: center;
+    width: 99.2%;
+    justify-content: space-between;
+    align-self:flex-start;
+}
+.sorts{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 8.2vmax;
+    height: 2.8vmax;
+    font-family: c;
+    font-size: 0.9vmax;
+    letter-spacing: 0.1vmax;
+    text-transform: uppercase;
+    border: 0.1vmax solid black;
+    position: relative;
+    background-color: white;
+}
+.sorts:hover{
+    background-color: #333333;
+    width: 8.5vmax;
+    height: 3.05vmax;
+    color: white;
+}
+.backSort{
+    position: absolute;
+    top: 0.2vmax;
+    left: 0.2vmax;
+    z-index: -1;
+    width: 8.2vmax;
+    height: 2.8vmax;
+    border: 0.1vmax solid black;
+}
+
+
+#sortImgs{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    width: 100%;
+    height: 30.7vmax;
+}
+#sortImgs>a{
+    width: 31.5%;
+    height: 47%;
+}
+#sortImgs>a>img{
+    width: 100%;
+    height: 100%;
+}
+
+#weSalons{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-image: url(images/Rectangle\ 6.png);
+    width: 100%;
+    height: 27.8vmax;
+}
+#salonCenter{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    text-align: center;
+    align-items: center;
+    font-family: 'Gilroy-Reg';
+    color: white;
+    width: 37vmax;
+    height: 18vmax;
+}
+#salon1{
+    font-size: 1.08vmax;
+}
+#salon2{
+    font-family:'NotoSerif-Bold';
+    font-size: 1.5vmax;
+}
+#salon3{
+    font-size: 0.92vmax;
+    line-height: 1.4;
+}
+#salonCenter>button{
+    color: #333333;
+    background-color: white;
+    font-family: 'Gilroy-Med';
+    font-size: 1.1vmax;
+    text-transform: uppercase;
+    width: 11.5vmax;
+    height: 2.7vmax;
+    border: transparent;
+}
+#salonCenter>button:hover{
+    background-color: rgba(255,255,255,0.5);
+    color: black;
+}
+
+#emty2{
+    width: 100%;
+    height: 6.6vmax;
+}
+#poleznye{
+    display: flex;
+    align-self: center;
+    align-items: center;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 57vmax;
+    height: 32vmax;
+}
+#headPolez{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    width: 38vmax;
+    height: 4vmax;
+}
+#hp1{
+    font-family: 'Gilroy-Reg';
+    font-size: 1.1vmax;
+}
+#hp2{
+    font-family: 'NotoSerif-bold';
+    font-size: 1.55vmax;
+}
+#poleznye>button{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 13vmax;
+    height: 2.6vmax;
+    font-family: 'Gilroy-Med';
+    text-transform: uppercase;
+    font-size: 0.85vmax;
+    letter-spacing: 0.14vmax;
+    border: transparent;
+    background-color: #333333;
+    color: white;
+}
+#poleznye>button:hover{
+    background-color: rgba(1,1,1,0.5);
+}
+#imgPolez{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+    height: 20vmax;
+
+}
+#imgPolez>div{
+    display: flex;
+    width: 31.5%;
+    height: 100%;
+}
+#imgP1{
+    background-image: url(images/clockWife.png);
+    background-size: cover;
+}
+#imgP2{
+    background-image: url(images/husbandZap.png);
+    background-size: cover;
+}
+#imgP3{
+    background-image: url(images/ringsFam.png);
+    background-size: cover;
+}
+
+
+#social{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 52.3vmax;
+    align-items: center;
+}
+#emtySoc{
+    width: 100%;
+    height: 6.4vmax;
+}
+#intoSoc{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    width: 57.2vmax;
+    height: 38.1vmax;
+}
+#socTxt{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    width: 20vmax;
+    height: 4vmax;
+}
+#socTxt1{
+    font-family: 'Gilroy-Reg';
+    font-size: 1.1vmax;
+}
+#socTxt2{
+    font-family: 'NotoSerif-Bold';
+    font-size: 1.55vmax;
+}
+#socImg{
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    height: 31vmax;
+}
+
+#socImg1{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-image: url(images/soc1.png);
+    background-size: cover;
+    width: 28.5vmax;
+    height: 15.6vmax;
+}
+#socImg2{
+    background-image: url(images/soc2.png);
+    background-size: cover;
+    width: 14.5vmax;
+    height: 15.55vmax;
+}
+#socImg3{
+    background-image: url(images/soc3.png);
+    background-size: cover;
+    width: 14.2vmax;
+    height: 15.55vmax;
+}
+#socImg4{
+    background-image: url(images/soc4.png);
+    background-size: cover;
+    width: 14.4vmax;
+    height: 15.5vmax;
+}
+#socImg5{
+    background-image: url(images/soc5.png);
+    background-size: cover;
+    width: 14.2vmax;
+    height: 15.5vmax;
+}
+#socImg6{
+    background-image: url(images/soc6.png);
+    background-size: cover;
+    width: 28.6vmax;
+    height: 15.5vmax;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+#socImg>div>img{
+    width: 3.4vmax;
+}
+
+#subscribe{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: steelblue;
+    width: 100%;
+    height: 24.55vmax;
+    background-image: url(images/subscribe.png);
+    background-size: cover;
+}
+#subEmty{
+    height: 5.4vmax;
+    width: 100%;
+}
+#intoSubscribe{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: 13vmax;
+}
+#intoSub1{
+    width: 28.75vmax;
+    height: 100%;
+}
+#intoSub2{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    width: 39.7vmax;
+    height: 100%;
+}
+#intoSubTop{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: white;
+    justify-content: space-between;
+    width: 24.5vmax;
+    height: 4vmax;
+    margin-left: 1.7vmax;
+}
+#intoSub11{
+    font-family: 'Gilroy-Med';
+    font-size: 1.07vmax;
+    line-height: 1;
+}
+#intoSub12{
+    font-family: 'NotoSerif-Bold';
+    font-size: 1.55vmax;
+}
+#intoSubBottom{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+    height: 5.9vmax;
+    color: white;
+}
+#intoSubBottomLeft{
+    display: flex;
+    padding-left: 1.2vmax;
+    font-family: 'Gilroy-Reg';
+}
+#intoSubBottomLeft>ul{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+#intoSubBottomLeft>ul>li{
+    list-style: url(images/marker.png);
+    padding-left: 0.6vmax;
+}
+#intoSubBottomRight{
+    display: flex;
+    border: 0.1vmax solid white;
+    width: 23.1vmax;
+    align-items: center;
+    justify-content: center;
+    height: 98%;
+}
+#intoSubBottomRight>div{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 21.5vmax;
+    height: 4.3vmax;
+    background-color: white;
+}
+#subscribes{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    height: 2.2vmax;
+    width: 19.1vmax;
+}
+#email{
+    width: 8vmax;
+    padding: 1vmax;
+    font-family: 'Gilroy-Reg';
+    text-transform: uppercase;
+    font-size: 0.8vmax;
+    height: 2.2vmax;
+    padding-top: 0;
+    padding-bottom: 0;
+}
+#submit{
+    width: 8vmax;
+    font-family: 'Gilroy-Reg';
+    text-transform: uppercase;
+    color: white;
+    height: 2.2vmax;
+    border: transparent;
+    background-color: #333333;
+}
+
+footer{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 19.5vmax;
+}
+footer>div{
+    display: flex;
+    flex-direction: column;
+    width: 57vmax;
+    height: 100%;
+}
+#fooEmty1{
+    width: 100%;
+    height: 4.2vmax;
+}
+#fooCenter{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+    height: 10vmax;
+ }
+/*
+#fooCenter>div{
+} */
+#foo1{
+    width: 13vmax;
+    height: 9.75vmax;
+}
+#foo2{
+    width: 13vmax;
+    height: 9.1vmax;
+}
+#foo3{
+    width: 13vmax;
+    height: 8vmax;
+}
+#foo4{
+    width: 13vmax;
+    height: 8.8vmax;
+}
+#fooEmtyInto{
+    width: 100%;
+    height: 1.6vmax;
+}
+#fooTitle{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    font-family: 'Gilroy-Reg';
+    letter-spacing: 0.07vmax;
+    text-transform: uppercase;
+    justify-content: space-between;
+    height: 1.8vmax;
+}
+#fooTitle>span{
+    font-size: 1vmax;
+}
+#fooTitle>hr{
+    width: 100%;
+    height: 0.05vmax;
+    border: transparent;
+    background-color: #333333;
+}
+#fooEmty2{
+    width: 100%;
+    height: 3vmax;
+}
+footer>div>hr{
+    width: 100%;
+    height: 0.05vmax;
+    background-color: #333333;
+    border: transparent;
+}
+#copyright{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+    height: 1.9vmax;
+    font-family: 'Gilroy-Reg';
+    align-items: end;
+    font-size: 0.76vmax;
+}
+
+#intoFoo1{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 100%;
+    height: 6.3vmax;
+    font-family: 'Gilroy-Reg';
+    font-size: 0.72vmax;
+}
+#intoFoo2{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 100%;
+    height: 5.6vmax;
+    font-family: 'Gilroy-Reg';
+    font-size: 0.715vmax;
+    line-height: 140%;
+}
+#intoFoo2>div{
+    display: flex;
+    flex-direction: row;
+    width: 5.6vmax;
+    justify-content: space-between;
+}
+#intoFoo2>div>img{
+    height: 1.7vmax;
+}
+#intoFoo3{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 100%;
+    height: 4.7vmax;
+}
+#intoFoo3>ul{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+    padding-left: 1.3vmax;
+}
+#intoFoo3>ul>li{
+    list-style: url(images/phone.png);
+    padding-left: 0.8vmax;
+    font-family: 'Gilroy-Reg';
+    font-size: 0.76vmax;
+}
+#intoFoo3>ul :nth-child(3){
+    list-style: url(images/post.png);
+}
+#intoFoo4{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 100%;
+    height: 5.5vmax;
+}
+#intoFoo4>span{
+    font-family: 'Gilroy-Reg';
+    font-size:0.715vmax ;
+    line-height: 145%;
+}
+#intoFoo4>div{
+    width: 10.4vmax;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+#intoFoo4>div>img{
+    height: 0.9vmax;
+}
+
+#imgPolez>div{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+#imgPolez>div>div{
+    width: 10.3vmax;
+    height: 15vmax;
+    display: flex;
+    align-items: end;
+    font-family: 'Gilroy-Reg';
+    color: white;
+    text-align: center;
+    font-size: 1.05vmax;
+    line-height: 130%;
+}
+
+
+/* CATALOG */
+nav{
+    background-color: #333333;
+}
+#nothingBeforeHr{
+    width: 100%;
+    height: 5.5vmax;
+}
+
+#sortCatalog{
+    display: flex;
+    align-self: center;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 57vmax;
+    height: 1.7vmax;
+}
+#sortCatalog>select{
+    width: 8.55vmax;
+    font-family: 'Gilroy-Reg';
+    padding-bottom: 0.6vmax;
+    border: transparent;
+    background-color: transparent;
+    border-bottom: 0.1vmax solid #D6D6D6;
+}
+
+#nothingBeforeForm{
+    width: 100%;
+    height: 4.9vmax;
+}
+
+#catalogue{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    align-self: center;
+    width: 57vmax;
+    /* height: 55.3vmax; */
+    display: flex;
+    flex-direction: column;
+}
+
+.cat1{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 53.5vmax;
+    height: 22vmax;
+}
+/* #cat2{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 53.5vmax;
+    height: 19vmax;
+} */
+.prod{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    width: 14.5vmax;
+    height: 22vmax;
+}
+.prodImages{
+    height:20vmax;
+    width: 14.5vmax;
+}
+.prod>span{
+    font-family: 'Gilroy-Reg';
+    font-size: 0.8vmax;
+}
+.prod>p{
+    font-family: 'Gilroy-SBold';
+    font-size: 1.24vmax;
+}
+.prod>a, #priceProd{
+    background-color: #333333;
+    color: white;
+    font-family: 'Gilroy-Med';
+    font-size: 1vmax;
+    width: 6.2vmax;
+    text-decoration: transparent;
+    height: 2vmax;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.void{
+    width: 100%;
+    height: 5.1vmax;
+}
+
+#catalogue>hr{
+    width: 100%;
+    height: 0.05vmax;
+    border: transparent;
+    background-color: #979797;
+
+}
+#catMore{
+    font-family: 'Gilroy-Med';
+    background-color: #333333;
+    color: white;
+    font-size: 1vmax;
+    height: 2.55vmax;
+    width: 11.5vmax;
+    text-transform: uppercase;
+    letter-spacing: 0.05vmax;
+
+}
+#befCatEmty{
+    width: 100%;
+    height: 7.6vmax;
+}
+#opis{
+    align-self: center;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    width: 47.5vmax;
+    height: 15.5vmax;
+}
+#opis1{
+    display: flex;
+    position: relative;
+    flex-direction: column;
+    align-self: flex-start;
+    width: 27vmax;
+    height: 12.6vmax;
+}
+#opisLorem{
+    position: absolute;
+    z-index: 1;
+    font-family: 'Gilroy-Med';
+    font-size: 0.818vmax;
+    line-height: 158.8%;
+}
+#opisLorem>p{
+    font-family: 'Gilroy-SBold';
+    font-size: 1.55vmax;
+}
+#gradientOpis{
+    position: absolute;
+    visibility: visible;
+    z-index: 2;
+    width: 27vmax;
+    height: 12.7vmax;
+    background: rgb(255,255,255);
+    background: linear-gradient(180deg, rgba(255,255,255,0) 0%, rgba(255, 255, 255, 0.95) 70%, rgba(255,255,255,1) 100%);
+}
+/* #gradientOpis:hover{
+    background: transparent;
+} */
+#opisMore{
+    position: absolute;
+    z-index: 3;
+    bottom: 0;
+    font-size: 1vmax;
+    font-family: 'Gilroy-Med';
+    text-transform: uppercase;
+    line-height: 150%;
+    letter-spacing: 0.05vmax;
+}
+#opisMore:hover{
+    border-bottom: 0.1vmax dashed black;
+}
+#imgsOpis{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    width: 14.5vmax;
+    height: 100%;
+}
+.whyWe{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    width: 7.25vmax;
+    height: 7vmax;
+}
+.whyWe>img{
+    width: 4vmax;
+}
+.whyWe>span{
+    width: 5.7vmax;
+    line-height: 160%;
+    text-align: center;
+    font-size: 0.8vmax;
+    font-family: 'Gilroy-Med';
+}
+#mtBeforeOpis{
+    width: 100%;
+    height: 7.6vmax;
+}
+
+#way{
+    width: auto;
+    align-self: center;
+    align-items: center;
+    height: 7.18vmax;
+    display: flex;
+    flex-direction: row;
+}
+#way>a{
+    font-size: 0.8vmax;
+    font-family: 'Gilroy-Reg';
+    color: #333333;
+}
+#way>a:active{
+    text-decoration: transparent;
+}
+.slash{
+    width: 1.3vmax;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+#aboutProd{
+    display: flex;
+    flex-direction: row;
+    align-self: center;
+    justify-content: space-between;
+    width: 57vmax;
+    height: 30vmax;
+}
+#imgsNSlider{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+    width: 27.8vmax;
+}
+#productIndex{
+    width: 27.8vmax;
+    height: 22vmax;
+}
+#productSlider{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+    height: 6.2vmax;
+}
+#productSlider>img{
+    width: 27%;
+    height: auto;
+}
+
+#aboutOpis{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 0.05vmax solid black;
+    height: 100%;
+    width: 27.7vmax;
+}
+#intoAboutOpis{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 0.05vmax solid black;
+    height: 94.6%;
+    width: 26.2vmax;
+}
+#textOpis{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    width: 23.4vmax;
+    height: 97%;
+}
+#textOpis>p{
+    font-family: 'Gilroy-SBold';
+    letter-spacing: 0.074vmax;
+    text-transform: uppercase;
+    font-size: 1.3vmax;
+}
+#prodLorem{
+    font-family: 'Gilroy-Reg';
+    font-size: 0.7175vmax;
+    line-height: 170%;
+}
+#catNbrand{
+    display: flex;
+    flex-direction: row;
+    font-family: 'Gilroy-Reg';
+    font-size: 0.8vmax;
+    color: #979797;
+}
+#prodPrice{
+    font-family: 'Gilroy-SBold';
+    font-size: 1.3vmax;
+}
+#prodTwoBtns{
+    width: 20vmax;
+    height: 2vmax;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+#prodTwoBtns>input{
+    background-color: transparent;
+}
+#buy{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 5.6vmax;
+    height: 100%;
+    font-family: 'Gilroy-Reg';
+    text-decoration: transparent;
+    text-transform: uppercase;
+}
+#basket{
+    width: 12.8vmax;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Gilroy-Reg';
+    text-transform: uppercase;
+    text-decoration: transparent;
+}
+.btnPos{
+    color: #333333;
+    border: 0.05vmax solid #333333;
+    font-size: 1vmax;
+}
+.btnPos:hover{
+    color: white;
+    background-color: #333333;
+}
+#mtPosOpis{
+    width: 100%;
+    height: 7vmax;
+}
+
+.btnMore{
+    position: absolute;
+    z-index: 3;
+    bottom: -2.5vmax;
+    font-size: 1vmax;
+    font-family: 'Gilroy-Med';
+    text-transform: uppercase;
+    line-height: 150%;
+    letter-spacing: 0.05vmax;
+}
+.btnMore:hover{
+    text-decoration: underline 0.06vmax dashed #333333;
+}
+#btnBottom{
+    position: absolute;
+    top: 13.6vmax;
+}
+#mtPos2{
+    width: 100%;
+    height: 6vmax;
+}
+
+#mayLike{
+    display: flex;
+    align-self: center;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    width: 53.5vmax;
+    height: 28.2vmax;
+}
+#headMay{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    width: 34vmax;
+    height: 4.2vmax;
+}
+#may1{
+    font-family: 'Gilroy-Reg';
+    font-size: 1.1vmax;
+}
+#may2{
+    font-family: 'NotoSerif-Bold';
+    font-size: 1.54vmax;
+}
+#mayPost{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+    height: 19vmax;
+}
+#mtPost{
+    width: 100%;
+    height: 8vmax;
+}
+
+#contact1{
+    display: flex;
+    justify-content: center;
+    font-family: 'Gilroy-Med';
+    text-transform: uppercase;
+    font-size: 1.3vmax;
+    line-height: 190%;
+    letter-spacing: 0.05vmax;
+    width: 100%;
+    height: 4.3vmax;
+}
+
+#contacts2{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-self: center;
+    width: 57vmax;
+    height: 5.2vmax;
+}
+.mtContTwin{
+    width: 100%;
+    height: 3vmax;
+}
+#contHr{
+    align-self: center;
+    width: 57vmax;
+    height: 0.05vmax;
+    background-color: #333333;
+    border: transparent;
+}
+#map{
+    align-self: center;
+    width: 57vmax;
+    height: 39vmax;
+}
+#mtCont3{
+    width: 100%;
+    height: 1.8vmax;
+}
+.cont{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.cont>span{
+    font-family: 'Gilroy-SBold';
+    font-size: 0.9vmax;
+}
+.cont>div{
+    display: flex;
+    flex-direction: row;
+    width: auto;
+    height: 2.8vmax;
+}
+#cont1>div>img, #cont4>div>img{
+    width: 0.6vmax;
+    height: 1vmax;
+}
+#cont2>div>img{
+    width: 0.8vmax;
+    height: 1vmax;
+}
+#cont3>div>img{
+    width: 0.8vmax;
+    height: 0.7vmax;
+}
+#textCont{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    line-height: 1;
+    font-size: 0.73vmax;
+    padding-left: 0.8vmax;
+    font-family: 'Gilroy-Reg';
+}
+
+a{
+    color: #333333;
+    text-decoration: transparent;
+}
+
+
+section{
+    display: flex;
+    align-self: center;
+    align-items: center;
+    justify-content: center;
+    transition: all 1s ease-in;
+    position: fixed;
+    left: 50vmax;
+    top: -50vmax;
+    transform: translate(-50%,-50%);
+    width: 50vmax;
+    height: 22vmax;
+    z-index: 4;
+    background-color: #333333;
+}
+#background{
+    position: fixed;
+    visibility: hidden;
+    z-index: 3;
+    background-color: #3333337d;
+    width: 100%;
+    height: 100%;
+
+}
+.christ{
+    position: absolute;
+    right: 1vmax;
+    top: 1vmax;
+    transition: transform 0.7s ease-in-out;
+}
+.christ:hover{
+    transform: rotate(90deg);
+}
+form{
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    align-items: center;
+    justify-content: space-around;
+    width: 45vmax;
+    height: 17vmax;
+    border: 0.05vmax solid white;
+}
+label{
+    display: flex;
+    flex-direction: row;
+    font-family: 'Gilroy-Med';
+    align-items: center;
+    font-size: 1vmax;
+    color: white;
+    width: 30vmax;
+    justify-content:space-between;
+}
+input[type=text], input[type=password]{
+    width: 19vmax;
+    height: 1.4vmax;
+    padding-left: 1vmax;
+}
+#headerForm{
+    font-family: 'NotoSerif-Bold';
+    color: white;
+    font-size: 1.4vmax;
+}
+
+.btns{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    font-family: 'Gilroy-Reg';
+    color: white;
+    font-size: 1vmax;
+    width: 30vmax;
+    height: 1.6vmax;
+}
+#toSignIn{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    width: 11vmax;
+    height: 1.6vmax;
+    border: 0.05vmax solid white;
+}
+#toLogIn{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    width: 6vmax;
+    height: 1.6vmax;
+    border: 0.05vmax solid white;
+}
+.btns>input{
+    border: 0.05vmax solid white;
+    background-color: transparent;
+    font-family: 'Gilroy-Reg';
+    color: white;
+    height: 1.6vmax;
+    padding: 0 0.5vmax;
+    font-size: 1vmax;
+}
+#nameAcc{
+    color: #333333;
+}
+#account{
+    width: 30vmax;
+    align-self: center;
+}
+#account>input[type=submit], .price{
+    background-color: #333333;
+    width: 10vmax;
+    height: 2vmax;
+    color: #D6D6D6;
+}
+#accountH2{
+    font-family: 'Gilroy-Reg';
+}
+
+#editName{
+    background-color: #333333;
+    width: 2vmax;
+    height: 2vmax;
+}
+
+.labelBlack{
+    color: #333333;
+}
+
+#blkForForm{
+    position: relative;
+    align-self: center;
+    display: flex;
+    flex-direction: column;
+    width: 57vmax;
+}
+
+#accountAside{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    font-family: 'Gilroy-SBold';
+    color: #333333;
+    /* background-color: pink; */
+    height: 4vmax;
+}
+
+
+.orderOne{
+    display: flex;
+    flex-direction: column;
+    border: 0.1vmax solid #333333;
+    width: 85%;
+    padding: 2% 5%;
+    margin: 0.8vmax 0 1vmax 0;
+    font-family: Gilroy-Reg;
+    font-size: 0.9vmax;
+    /* background-color: purple; */
+}
+.yourOrders{
+    /* background-color: dodgerblue; */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow-y: scroll;
+    width: 100%;
+    height: 20vmax;
+}
+.oneOrders{
+    margin-bottom: 2vmax;
+    /* background-color: green; */
+    width: 100%;
+}
+.numbers{
+    font-family: Gilroy-SBold;
+    /* background-color: firebrick; */
+    font-size: 1.2vmax;
+    line-height: 160%;
+}
+.namePos{
+    font-family: Gilroy-Med;
+    font-size: 1vmax;
+}
+.sumPrice{
+    font-family: Gilroy-SBold;
+    font-size: 1vmax;
+    width: 90%;
+    display: flex;
+    justify-content: end;
+    color: #333333;
+    line-height: 180%;
+}
+.getProd{
+    width: auto;
+}
+
+
+
+/* MODAL */
+
+#logInModal{
+    width: 35vmax;
+    height: 25vmax;
+}
+#signInModal{
+    width: 35vmax;
+    height: 28vmax;
+}
+form{
+    width: 30vmax;
+    height: 20vmax;
+}
+label{
+    flex-direction:column;
+    align-items:start;
+    width: 28vmax;
+}
+input[type=text]{
+    width: 27vmax;
+}
+.btns{
+    width: 28vmax;
+}
+#zareg{
+    height: 23.5vmax;
+}
+.forLabel{
+    position: relative;
+    display:flex;
+    flex-direction:column;
+    justify-content:end;
+    height:3vmax;
+}
+#labels, #passwords{
+    position: absolute;
+    top:1.6vmax;
+    width:1vmax;
+    color: #333333;
+    padding-left: 1vmax;
+    transition : 0.5s ease-in-out;
+}
+
+#user_admin{
+    width: 100%;
+    align-items: center;
+    background-color: #333333;
+}
+.user_id_admin{
+    padding-left: 1vmax;
+    width: 2vmax;
+    height: 1.6vmax;
+    background-color: white;
+}
+.user_name_admin{
+    padding-left: 1vmax;
+    width: 4vmax;
+    height: 1.6vmax;
+    background-color: white;
+}
+.user_login_admin{
+    padding-left: 1vmax;
+    width: 4vmax;
+    height: 1.6vmax;
+    background-color: white;
+}
+.user_birth_admin{
+    padding-left: 1vmax;
+    width: 4vmax;
+    height: 1.6vmax;
+    background-color: white;
+}
+.user_status_admin{
+    padding-left: 1vmax;
+    width: 4vmax;
+    height: 1.6vmax;
+    background-color: white;
+}
+
+.unblocked, .redUser{
+    background-color: rgb(163, 128, 128);
+}
+.blocked, .greenUser{
+    background-color: rgb(126, 163, 126);
+    color: #333333;
+}
+
+#scrollUsers{
+    width: 100%;
+    height: 25vmax;
+    overflow-y: scroll;
+    overflow-x: hidden;
+}
+
+#coffee{
+    display: none;
+}
+
+#centerCatMore{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.voidCart {height:2vmax;}
+          .headlineCart {font-family: 'Gilroy-SBold';
+              color: #333333;
+              grid-column:2;
+              font-size: 2vmax;}
+          .gridGrid {display: grid;
+                              grid-template-rows: 100%;
+                              grid-template-columns: 21% auto 21%;}
+          .navCart {width:100%;
+                    height:30vmax;
+                    display:grid;
+                    grid-template-rows:100%;
+                    grid-template-columns:5vmax 15vmax 58% auto;}
+          #navBlock {grid-column:2;
+                     display:grid;
+                     grid-template-rows:repeat(4, 3.5vmax) auto;
+                     grid-template-columns:100%;
+                     color:#333333;
+                     font-family:"Gilroy-SBold";
+                     font-size:1.4vmax;}
+          #navBlock a {color:#333333;}
+          #empty { color:#333333;
+                     font-family:"Gilroy-Reg";
+                     font-size:1.2vmax;}
+          #orderContent {display:grid;
+                         grid-column:3;
+                         grid-template-columns:100%;}
+          .orderContentForADMIN {width:130%;}
+          #rowOrder {display:grid;
+                     grid-template-rows:100%;
+                     height:4vmax;
+                     width:100%;
+                     color:#333333;
+                     font-family:"Gilroy-Reg";
+                     font-size:1.2vmax;
+                     align-items:center;}
+          /* .rowOrderForADMIN{grid-template-columns:7% 13% 35% 25% 1fr;} */
+          .rowOrderForADMIN{grid-template-columns:2% 7% 20% 2% 12% 2% 28% 2% 12% 1fr 1fr;}
+          .rowOrderForADMIN input {padding-left:3%;}
+          #curNav {text-decoration:overline; }
+          #voidOrder a {color:#333333;}
+          .headline {font-family: 'Gilroy-SBold';
+              color: #333333;
+              font-size: 2vmax;
+              grid-column:1/span all;
+              justify-self:center;}
+          #imgOrder {border-radius:100vmax;
+                     width:3.5vmax;
+                     height:3.5vmax;}
+          .buttonDelete, .buttonRecover {width:2.5vmax;
+                        justify-self:center;}
+          .classDeleted {border:0.15vmax solid #c5c5c5;
+                         color:#b2b0b0;}
+          .classDeleted2 {color:#b2b0b0;}
+          .classAvailable2 {color:#333333;}
+          .classAvailable {border:0.1vmax solid #333333;}
+          #buttonOK {width:80%;
+                     justify-self: center;}
+          .aDelRec {width:100%;}
+
+#createJew{
+    width: 10vmax;
+    height: 2vmax;
+    background-color: #333333;
+    color: #D6D6D6;
+    font-family: Gilroy-SBold;
+    margin: 1vmax 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+#sectionCreate{
+    display: flex;
+    flex-direction: column;
+    align-self: center;
+    width: 90vmax;
+    height: auto;
+}
+#sectionCreate>form{
+    display: flex;
+    align-items: start;
+    margin-top: 1vmax;
+    height: auto;
+}
+#sectionCreate>input{
+    width: 20vmax;
+}
+#sectionCreate>h2{
+    font-family: Gilroy-SBold;
+    font-size: 1.6vmax;
+    line-height: 300%;
+    color: #333333;
+}
+#createForm>textarea{
+    padding: 1vmax 1vmax;
+    width: 27vmax;
+    height: 5vmax;
+    resize: horizontal;
+    max-width: 60vmax;
+}
+#createForm>input, #createForm>select{
+    height: 2vmax;
+    width: 27vmax;
+}
+#createForm>input[type=submit]{
+    background-color: #333333;
+    color: #D6D6D6;
+    font-family: Gilroy-Med;
+    margin-top: 1vmax;
+    font-size: 1.2vmax;
+}
+.labelCreate{
+    color: #333333;
+    font-size: 1.2vmax;
+    line-height: 200%;
+}
+.inputCreate{
+    padding-left: 1vmax;
+    width: 27vmax;
+    height: 2vmax;
+    font-family: Gilroy-Reg;
+}
+#priceCreate{
+    padding-left: 1vmax;
+    width: 15vmax;
+    height: 2vmax;
+}
+#backIndex{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 17vmax;
+    height: 4vmax;
+    font-family: Gilroy-Med;
+}
+
+
+
+#firstMod{
+    height: 33vmax;
+}
+#secondMod{
+    height: 33vmax;
+}
+@font-face {
+    font-family: 'Gilroy-Med';
+    src: url(fonts/Gilroy-Medium.woff);
+}
+@font-face {
+    font-family: 'Gilroy-Reg';
+    src: url(fonts/Gilroy-Regular.woff);
+}
+@font-face {
+    font-family: 'Gilroy-SBold';
+    src: url(fonts/Gilroy-SemiBold.woff);
+}
+@font-face {
+    font-family: 'NotoSerif-Bold';
+    src: url(fonts/NotoSerif-Bold.woff);
+}
