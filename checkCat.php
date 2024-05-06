@@ -1,5 +1,6 @@
 <?php
-    $query = '?';
+session_start();
+$query = '?';
     $check_query = false;
     // CATHEGORYS
     if(isset($_GET['category'])){

@@ -1,5 +1,6 @@
 <?php
-    require "connectbd.php";
+session_start();
+require "connectbd.php";
 
     $check_brand = 0;
 
@@ -22,6 +23,9 @@
         }
         if($cats_name==6){
             $cat_name= 'Подвески';
+        }
+        if($cats_name == 7){
+            $cat_name = 'nothing';
         }
     }
 
@@ -47,9 +51,9 @@
             </select>
             <!-- PRICE -->
             <select name="price" id="price">
-                <option value=" " id="sortPrice" <??>>Цена (по умолч.)</option>
-                <option value="jew_price ASC" id="sortPrice">Цена (по воз.)</option>
-                <option value="jew_price DESC" id="sortPrice">Цена (по убыван.)</option>
+                <option value=" " id="sortPrice" <?= isset($_GET['price']) AND $_GET['price'] ==  "" ? "selected" : " " ?>>Цена (по умолч.)</option>
+                <option value="jew_price ASC" id="sortPrice" <?= isset($_GET['price']) AND $_GET['price'] ==  "jew_price ASC" ? "selected" : " " ?> >Цена (по воз.)</option>
+                <option value="jew_price DESC" id="sortPrice" <?= isset($_GET['price']) AND $_GET['price'] ==  "jew_price DESC" ? "selected" : " " ?>>Цена (по убыван.)</option>
             </select>            
             
             <!-- CATEGORY -->
@@ -125,7 +129,7 @@
                         // создать errors
                         echo "Нет товаров категории : ";
                         
-                            echo isset($cat_name)?$cat_name:$_GET['cat_name'];
+                            echo isset($cat_name)?$cat_name:$_GET['cats_name'];
                         
                         echo "!";
                     }
@@ -139,9 +143,8 @@
                                     echo "<div class = 'prod'>
                                             <img class='prodImages' src='images/jew/$product[4]' alt='$product[2]'>
                                             <p>$product[1]</p>
-                                            <form action='product.php' method='POST' class='getProd'>
-                                                <input type='submit' class='price' id='priceProd' value='$product[5] &#8381'>
-                                                <input type='hidden' name ='prodId' value ='$product[0]' id ='prodId'>
+                                            <form action='product.php?product=$product[0]' method='POST' class='getProd'>
+                                                <input type='submit' class='price' id='priceProd' value='$product[5] &#8381' title=''>
                                             </form>
                                         </div>";
                             if($counter==3){
@@ -214,8 +217,8 @@
                         <div id="intoSubBottomRight">
                             <div>
                                 <form action="#" method="GET" id="subscribes">
-                                    <input type="email" placeholder="ваш e-mail" id="email">
-                                    <input type="submit" name="submit" id="submit">
+                                    <input type="email" placeholder="ваш e-mail" id="email" title=''>
+                                    <input type="submit" name="submit" id="submit" title=''>
                                 </form>
                             </div>
                         </div>

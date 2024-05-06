@@ -1,5 +1,6 @@
 <?php
-    require "connectbd.php";
+session_start();
+require "connectbd.php";
     require "header.php";
 ?>
 

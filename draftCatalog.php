@@ -1,5 +1,6 @@
 <?php
-    require "connectbd.php";
+session_start();
+require "connectbd.php";
     $query = mysqli_query($conn, "SELECT * FROM jewelery inner join category on jew_cat=category_id");
     $products = mysqli_fetch_all($query);
 ?>
@@ -20,14 +21,11 @@
         <form action="checkLogIn.php" method="POST">
             <img src="images/x.png" alt="christ" class="christ">
             <p id="headerForm">Войти</p>
-            <!-- <label for="name">ФИО :
-                <input type="text" name="name" id="nameForm">
-            </label> -->
             <label for="phone">Телефон :
-                <input type="text" name="phone" id="phone">
+                <input type="text" name="phone" id="phone" require title=''>
             </label>
             <label for="password">Пароль :
-                <input type="text" name="password" id="password">
+                <input type="text" name="password" id="password" require title=''>
             </label>
             <div id="btns">
                 <span id="toSignIn">Зарегистрироваться</span>
@@ -41,13 +39,13 @@
             <img src="images/x.png" alt="christ" class="christ">
             <p id="headerForm">Зарегистрироваться</p>
             <label for="name">ФИО :
-                <input type="text" name="name" id="name">
+                <input type="text" name="name" id="name" require title=''>
             </label>
             <label for="phone">Телефон :
-                <input type="text" name="phone" id="phone">
+                <input type="text" name="phone" id="phone" require title=''>
             </label>
             <label for="password">Пароль :
-                <input type="text" name="password" id="password">
+                <input type="text" name="password" id="password" require title=''>
             </label>
             <div id="btns">
                 <span id="toLogIn">Войти</span>
@@ -247,7 +245,7 @@
                         <div id="intoSubBottomRight">
                             <div>
                                 <form action="#" method="GET" id="subscribes">
-                                    <input type="email" placeholder="ваш e-mail" id="email">
+                                    <input type="email" placeholder="ваш e-mail" id="email" title='' require>
                                     <input type="submit" name="submit" id="submit">
                                 </form>
                             </div>

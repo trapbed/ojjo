@@ -1,5 +1,6 @@
 <?php
-    require "connectbd.php";
+session_start();
+require "connectbd.php";
 
     $sortBy = isset($_GET['sort']) ? $_GET['sort'] : false;
 
@@ -125,7 +126,6 @@
                     $maketId++;
 
                 }
-                    // setcookie('idProd', $item , time() + 3600, "/");
 ?>
 
             

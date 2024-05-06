@@ -1,6 +1,7 @@
 <?php
-    require "connectbd.php";
-    $id = $_COOKIE['idsh'];
+session_start();
+require "connectbd.php";
+    $id = isset($_SESSION['idsh']) ? $_SESSION['idsh'] : false;
 
     $old = mysqli_fetch_assoc(mysqli_query($conn, "SELECT * FROM users WHERE user_id = $id"));
     print_r($old);

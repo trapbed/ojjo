@@ -1,10 +1,10 @@
 <?php 
-    include "connectbd.php";
-    echo $_COOKIE['name'];
-    echo $_COOKIE['cat'];
-    echo $_COOKIE['desc'];
-    echo $_COOKIE['img'];
-    echo $_COOKIE['price'];
-    echo $_COOKIE['brand'];
+    session_start();
+    require "connectbd.php";
+    require "header.php";
+    $id_prod = $_POST['idProd'];
+
+    echo $id_prod;
+    echo "buy";
 
 ?>

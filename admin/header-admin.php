@@ -1,6 +1,7 @@
 <?php
+    session_start();
     include "../connectbd.php";
-    $idishka = isset($_COOKIE['id']) ? $_COOKIE['id'] : false;
+    $idishka = isset($_SESSION['id']) ? $_SESSION['id'] : false;
     $queryUser = mysqli_fetch_assoc(mysqli_query($conn, "SELECT * from users WHERE user_id = $idishka"));
 ?>
 
@@ -15,7 +16,7 @@
    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>    
 </head>
 <body>
-        <nav>
+        <nav id='navFixedButton'>
             <div>
                 <div id="navLeft">
                     <span>Контрагентам</span>
@@ -45,7 +46,15 @@
                 </div>
             </div>
         </nav>
+        <?php
+    $s1 = isset($_SERVER['SERVER_NAME']) ? $_SERVER['SERVER_NAME'] : false;
+    $s2 = isset($_SERVER['PHP_SELF']) ? $_SERVER['PHP_SELF'] : false;
+    $s3 = isset($_SERVER['QUERY_STRING'])? "?".$_SERVER['QUERY_STRING'] : false;
 
+    $sLast = $s1.$s2.$s3;
+
+    // echo $sLast;
+    ?>
         <script>
                 let inputs = document.getElementsByClassName("input");//input
                 let labels = document.getElementsByClassName("label");//label
@@ -63,3 +72,4 @@
                             }
                 }
         </script>
+        <a href='#navFixedButton'><div id='fixedButton'></div></a>

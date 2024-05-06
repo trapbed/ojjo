@@ -1,9 +1,12 @@
 <?php
-    require "connectbd.php";
+session_start();
+require "connectbd.php";
     require "header.php";
+    // $_SESSION['lastPage'] = $_SERVER['REQUEST_URI'];
 
+    // echo $_SESSION['lastPage'] ;
     
-    $prodId = isset($_POST['prodId']) ? $_POST['prodId'] : $_COOKIE['product'];
+    $prodId = isset($_GET['product']) ? $_GET['product'] : $_SESSION['product'] ;
 
     $queryProd = mysqli_fetch_all(mysqli_query($conn, "SELECT jew_name, category_name, jew_descr, jew_img, jew_price, jew_brand FROM jewelery inner join category on jew_cat=category_id WHERE jew_id=$prodId"));
 
@@ -49,11 +52,16 @@
                     <span id="prodLorem"><?=$desc ?>
                     </span>
                     <span id="prodPrice"><?=$price ?> &#8381</span>
-                        <form action="buyOrDraft.php" method='POST' id='prodTwoBtns'>
+                    <div id="prodTwoBtns">
+                        <form action="buy.php" method='POST' id=''>
                             <input type="submit" name='buy' value="Купить" id='buy'>
+                            <input type="hidden" name="idProd" value='<?=$prodId?>'>
+                        </form>
+                        <form action="cart.php" method='POST' id=''>
                             <input type="submit" name='draft' value="Добавить в корзину" id='basket'>
                             <input type="hidden" name="idProd" value='<?=$prodId?>'>
                         </form>
+                    </div>
                 </div>
             </div>
         </div>

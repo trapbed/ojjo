@@ -1,6 +1,7 @@
 <?php
-    include "connectbd.php";
-    $idishka = isset($_COOKIE['id']) ? $_COOKIE['id'] : false;
+session_start();
+include "connectbd.php";
+    $idishka = isset($_SESSION['id']) ? $_SESSION['id'] : false;
 
     if($idishka == false){
         echo "<div id='background'></div>
@@ -65,7 +66,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Account</title>
+    <title>OJJO</title>
     <link rel="stylesheet" href="style.css">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
@@ -77,7 +78,7 @@
             echo "<header>";
         }
         ?>
-        <nav>
+        <nav id='navFixedButton'>
             <div>
                 <div id="navLeft">
                     <span>Контрагентам</span>
@@ -133,7 +134,7 @@
                 }
         </script>
     <?php
-    if (isset($_COOKIE['check'])) {echo "<script>let btn = document.getElementById('logIn');
+    if (isset($_SESSION['check'])) {echo "<script>let btn = document.getElementById('logIn');
         let bg=document.getElementById('background');
         let toReg=document.getElementById('toSignIn');
         let toSign=document.getElementById('toLogIn');
@@ -182,6 +183,7 @@
                                                      inputs[3].style.borderColor='red';
                                                      coffee.style.display = 'block';
                                                      </script>";} 
-                                                     unset($_COOKIE['check']);
+                                                     unset($_SESSION['check']);
                                                     //  setcookie('check', '' , time()-3600, '/');
     ?>
+        <a href='#navFixedButton'><div id='fixedButton'></div></a>

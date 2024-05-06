@@ -1,11 +1,10 @@
-
-
 <?
+session_start();
 require "connectbd.php";
 // session_start();
-$name = $_COOKIE['name'];
-$pass = $_COOKIE['pass'];
-$phone = $_COOKIE['phone']; 
+$name = $_SESSION['name'];
+$pass = $_SESSION['pass'];
+$phone = $_SESSION['phone']; 
 $queryUser = false;
 $result1 = mysqli_query($conn, "SELECT * FROM users WHERE user_login = '$phone'");
 $user1 = mysqli_fetch_assoc($result1);
@@ -19,7 +18,8 @@ else {$queryUser = mysqli_query($conn, "INSERT INTO users (user_name, user_login
 
      if ($queryUser) {
         $new_id = mysqli_insert_id($conn);
-        setcookie('id', $new_id, time()+3600, '/');
+        // setcookie('id', $new_id, time()+3600, '/');
+        $_SESSION['id'] = $new_id ;
         echo "<script>alert(\"Вы успешно зарегистрировались!\");
                  location.href='account.php';</script>";}
     else {

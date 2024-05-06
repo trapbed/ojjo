@@ -10,7 +10,7 @@ let answer = confirm('Вы точно хотите удалить товар?');
                            $_SESSION['jew_id']=$jew_id; 
                       ?>
                            location.href='editJewStatus.php';} 
-        else {location.href='index.php';} }
+        else {location.href='index.php?page=items';} }
 else {<?php session_start(); 
             $_SESSION['edit']=$edit; 
             $_SESSION['jew_id']=$jew_id; 
