@@ -73,6 +73,7 @@
                 echo "<div id='cart'>";
                 if(isset($_SESSION['cart']) && count($_SESSION['cart']) != 0){
                     
+                    $countProd = 0;
                     $cart = $_SESSION['cart'];
 
                     foreach($cart as $prod=>$key){
@@ -85,7 +86,8 @@
                         $amount = $key;
                         $sum = $amount * $price;
                         $_SESSION['lastPage'] = $_SERVER['REQUEST_URI'];
-                        
+                        $countProd++;
+                        // echo $countProd;
                         echo "
                             <div class='oneProdCart'>
                                 <img class='imgProdCat' src='../images/jew/$img' alt='$name'>
@@ -115,12 +117,25 @@
                                 </div>
                             </div>
                         ";
+                        // echo count($_SESSION['cart']);
+                        if($countProd == count($_SESSION['cart'])){
+                            $sumCart = 0;
+                            $sumRowCart ;
+                            foreach($_SESSION['cart'] as $prod => $amount){
+                                $price = mysqli_fetch_array(mysqli_query($conn, "SELECT `jew_price` FROM `jewelery` WHERE jew_id =".$prod));
+                                $sumRowCart = $price[0]*$amount;
+                                $sumCart += $sumRowCart;
+                            }
+                            
+                        }
                     }
+                    echo "</div>";
+                    echo "<div id='sumAllCart'><span>СУММА КОРЗИНЫ : &nbsp;&nbsp;&nbsp; $sumCart &nbsp; &#8381</span></div>";
                 }
                 else{ 
-                    echo "В корзине хранятся неоплаченные товары";
+                    echo "В корзине хранятся неоплаченные товары";echo "</div>";
                 }
-                echo "</div>";
+                
             }        
             // <a class='minusProdCart' href='account.php?page=draft&act=minus'>-</a>
 

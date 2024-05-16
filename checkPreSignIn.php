@@ -6,7 +6,7 @@ $pass = isset($_POST['password']) ? trim($_POST['password']) :false;
 $name = trim($_POST['name']);
 ?>
 <script>
-    let phone ='<?php if ($phone) echo $phone; ?>';
+let phone ='<?php if ($phone) echo $phone; ?>';
 if (phone!='') {if (phone.match(/7[0-9]{10}/)) {<?php
                                                     // setcookie('phone',$phone , time()+3600, '/');
                                                     $_SESSION['phone'] = $phone ;
