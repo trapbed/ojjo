@@ -2,7 +2,7 @@
 session_start();
 require "connectbd.php";
     require "header.php";
-    // $_SESSION['lastPage'] = $_SERVER['REQUEST_URI'];
+    $_SESSION['lastPage'] = $_SERVER['REQUEST_URI'];
 
     // echo $_SESSION['lastPage'] ;
     

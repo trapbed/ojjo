@@ -3,6 +3,12 @@ session_start();
 include "connectbd.php";
     $idishka = isset($_SESSION['id']) ? $_SESSION['id'] : false;
 
+
+    if(isset($_SESSION['mess'])){
+        echo "<script>alert('".$_SESSION['mess']."');</script>";
+    }
+
+
     if($idishka == false){
         echo "<div id='background'></div>
 
@@ -14,17 +20,38 @@ include "connectbd.php";
                 <label for='logins' id='labels' class='label'>
                     Логин
                 </label>
-                <input type='text' name='logins' id='logins' class='input'>
+                <input type='text' name='logins' id='logins' class='input' required>
             </div>
             <div class='forLabel'>
             <label for='password' class='label' id='labels'>
                     Пароль
             </label>
-            <input type='text' name='password' id='password' class='input'>
+            <input type='text' name='password' id='password' class='input' required>
             </div>
             <div class='btns'>
                 <span id='toSignIn'>Зарегистрироваться</span>
                 <input type='submit' value='Войти'>
+            </div>";
+            if(isset($_SESSION['checkPass']) && $_SESSION['checkPass'] >= 1){
+                echo "<div id='forgetPass'>Забыли пароль? <div id='recoverPass'>Восстановить.</div></div>";
+                unset($_SESSION['checkPass']);
+            }
+        echo "</form>
+    </section>
+    
+    
+    <section id='recoverPassDiv' >
+        <form action='recoverPass.php' method='POST' id='voiti' class='form'>
+            <img src='images/x.png' alt='christ' class='christ' id='christ'>
+            <p id='headerForm'>Восстановить пароль </p>
+            <div class='forLabel'>
+                <label for='email' id='labels' class='label'>
+                    Почта
+                </label>
+                <input type='text' name='email' id='logins' class='input' required>
+            </div>
+            <div class='btns'>
+                <input type='submit' value='Восстановить'>
             </div>
         </form>
     </section>
@@ -37,20 +64,20 @@ include "connectbd.php";
                 <label for='name' id='labels' class='label'>
                     ФИО
                 </label>
-                <input type='text' name='name' id='name' class='input'>
+                <input type='text' name='name' id='name' class='input' required>
             </div>
             <div class='forLabel'>
                 <label for='phone' id='labels' class='label'>
-                    Логин
+                    Логин (email)
                 </label>
-                <input type='text' name='phone' id='phone' class='input'>
+                <input type='email' name='phone' id='phone' class='input' required>
             </div>
             <div class='coffee' id='coffee'>Номер телефона не соответствует шаблону</div>
             <div class='forLabel'>
                 <label for='password' class='label' id='labels'>
                         Пароль
                 </label>
-                <input type='text' name='password' id='password' class='input'>
+                <input type='text' name='password' id='password' class='input' required>
             </div>
             <div class='btns'>
                 <span id='toLogIn'>Войти</span>

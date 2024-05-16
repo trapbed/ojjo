@@ -1500,7 +1500,7 @@ input[type=text]{
 }
 .user_name_admin{
     padding-left: 1vmax;
-    width: 4vmax;
+    width: 2vmax;
     height: 1.6vmax;
     background-color: white;
 }
@@ -1512,7 +1512,7 @@ input[type=text]{
 }
 .user_birth_admin{
     padding-left: 1vmax;
-    width: 4vmax;
+    width: 3.5vmax;
     height: 1.6vmax;
     background-color: white;
 }
@@ -1910,6 +1910,40 @@ input[type=text]{
     height: auto;
     background-color: transparent;
     border: transparent;
+}
+#sumAllCart{
+    display: flex;
+    flex-direction: row;
+    justify-content: end;
+    font-family: Gilroy-SBold;
+    font-size: 1.2vmax;
+    width: 58vmax;
+    line-height: 300%;
+}
+
+#recoverPassDiv{
+    height: 22vmax;
+    width: 35vmax;
+}
+#recoverPassDiv>form{
+    height: 16vmax;
+}
+#recoverPass{
+    color: aliceblue;
+    font-family: Gilroy-Reg;
+    font-size: 1vmax;
+    line-height: 120%;
+}
+#recoverPass :hover{
+    text-decoration: underline;
+    line-height: 180%;
+}
+#forgetPass{
+    display: flex;
+    flex-direction: row;
+    color: #979797;
+    font-family: Gilroy-Reg;
+    font-size: 1vmax;
 }
 @font-face {
     font-family: 'Gilroy-Med';
