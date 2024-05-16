@@ -81,3 +81,42 @@ if($title && $text && $file && $category){
 else{
     echo check_error("Все поля должны быть заполнены!!!");
 } -->
+
+
+
+
+foreach ($queryCategories as $categoryCats) {
+                $ii++;
+                if ($categoryCats[4]==1) {$class_st='classDeleted';
+                    $class_st2='classDeleted2';}
+                else {$class_st='classAvailable';  
+                    $class_st2='classAvailable2';}
+                echo "<form id='rowOrder' class='rowOrderForADMIN' action='checkJewEdit.php' method='post' enctype='multipart/form-data'>";
+                echo "<div id='numberOrder' class='$class_st2'>$ii</div>"; 
+                echo "<input type='file' id='file' style='display:none;' name='jew_img'>
+                      <img src='../images/jew/$orders[1]' id='imgOrder' onclick='file.click()'>"; 
+                echo "<input id='getOrder' value='$orders[0]' class='$class_st' name='jew_name' required title='Название уккрашения'> ";
+                echo "<div></div>";
+                echo "<input value='$orders[2]' class='$class_st' name='jew_price' required  title='Цена'> ₽";  
+                echo "<input value='$orders[3]' class='$class_st' name='jew_descr' required  title='Описание украшения'>";
+                echo "<div></div>";
+                echo "<select class='$class_st' name='jew_cat'  title='Категория украшние'>";
+                foreach ($queryCategories as $category) {
+                    if ( $orders[5] == $category[0]) {
+                        $sel = 'selected';
+                    }
+                    else {
+                        $sel = '';
+                    }
+                    echo "<option $sel>$category[1]</option>";
+                }
+                echo "</select>";
+                echo "<input type='submit' value='OK' class='$class_st' id='buttonOK' required>";
+                if ($orders[4]==1) {
+                    echo "<a href='preEditJewStatus.php?edit=recover&id=$orders[6]' class='aDelRec'><img src='../images/recover.png' class='buttonRecover'></a>";
+                }
+                else {
+                    echo "<a href='preEditJewStatus.php?edit=delete&id=$orders[6]'><img src='../images/delete.png' class='buttonDelete'></a>";
+                }
+                echo "<input type='hidden' value='$orders[6]' name='jew_id'>";
+                echo  "</form>";}

@@ -1,0 +1,4 @@
+ Uncaught mysqli_sql_exception: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'Array WHERE jew_name LIKE '%к%'' at line 1 in
+
+
+ 

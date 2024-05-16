@@ -31,12 +31,8 @@
                     </div>
                     <?php
 
-                    if($idishka == false){
-                        echo "<div id='logIn'>Вход/Регистрация</div>";
-                    }
-                    else{
-                        echo "<a id='logIn' href='../exit.php'>".isset($queryUser['user_name'])?$queryUser['user_name']."- admin/ выйти</a>":'';
-                    }
+                        echo "<a id='logIn' href='../exit.php'>".$queryUser['user_name']."- admin/ выйти</a>";
+                    
 
                     ?>
                     <div id="icons">
