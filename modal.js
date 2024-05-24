@@ -38,6 +38,7 @@ for(let i=0;i<christ.length;i++){
 bg.addEventListener('click', function(){
     modalLog.style.top='-50vmax';
     modalSign.style.top='-50vmax';
+    recover.style.top = "-50vmax";
     bg.style.visibility='hidden';
 })
 

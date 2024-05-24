@@ -41,8 +41,9 @@ require "connectbd.php";
                     $brands = mysqli_fetch_all(mysqli_query($conn, "SELECT jew_brand FROM jewelery"));
                     echo "<option value=' ' id='sortBrand'>Без бренда</option>";
                     foreach($brands as $brand){
+                        
                         echo "<option value='$brand[0]' id='sortBrand'";
-                        if(isset($_GET['brands'])&& $_GET['brands']==$brand){
+                        if(isset($_GET['brands'])&& $_GET['brands']==$brand[0]){
                             echo " selected ";
                         }
                         echo ">".$brand[0]."</option>";

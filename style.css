@@ -1307,6 +1307,9 @@ input[type=text], input[type=password]{
     color: white;
     font-size: 1.4vmax;
 }
+#formLoginReg{
+    width: 28vmax;
+}
 
 .btns{
     display: flex;
@@ -1481,7 +1484,7 @@ input[type=text]{
 #labels, #passwords{
     position: absolute;
     top:1.6vmax;
-    width:1vmax;
+    width:8vmax;
     color: #333333;
     padding-left: 1vmax;
     transition : 0.5s ease-in-out;
@@ -1917,7 +1920,8 @@ input[type=text]{
     justify-content: end;
     font-family: Gilroy-SBold;
     font-size: 1.2vmax;
-    width: 58vmax;
+    /* width: 80vmax; */
+    gap: 3vmax;
     line-height: 300%;
 }
 
@@ -1944,6 +1948,17 @@ input[type=text]{
     color: #979797;
     font-family: Gilroy-Reg;
     font-size: 1vmax;
+}
+#buyCartUser{
+    font-family: Gilroy-Reg;
+    font-size: 1.2vmax;
+    background-color: #333333;
+    color: white;
+    width: 8vmax;
+    height: 3vmax;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 @font-face {
     font-family: 'Gilroy-Med';

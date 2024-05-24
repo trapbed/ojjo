@@ -1,8 +1,21 @@
 <?php
     session_start();
+
     include "../connectbd.php";
     $idishka = isset($_SESSION['id']) ? $_SESSION['id'] : false;
-    $queryUser = mysqli_fetch_assoc(mysqli_query($conn, "SELECT * from users WHERE user_id = $idishka"));
+    if(!isset($_SESSION['id']) || $_SESSION['admin_status'] == '0'){
+        // header("Location:../index.php");
+        $_SESSION['mess'] = "Вы не можете перейти в административную часть сайта";
+        echo "<script>location.href='../index.php';</script>";
+    }
+    $queryUser = mysqli_fetch_assoc(mysqli_query($conn, "SELECT * from users WHERE user_id = $idishka"));    
+
+    if(isset($_SESSION['mess'])){
+        // header("Location:../index.php");
+        $mess = $_SESSION['mess'];
+        echo "<script>alert('$mess');</script>";
+        unset($_SESSION['mess']);
+    }
 ?>
 
 <!DOCTYPE html>

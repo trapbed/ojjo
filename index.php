@@ -2,7 +2,7 @@
 session_start();
 require_once "header.php";
 ?>
-
+<!-- <a href="checker.php">Проверь почту</a> -->
         <div id="emty1"></div>
         <div id="headerBtn">
             <span>Долго, дорого, богато!</span>

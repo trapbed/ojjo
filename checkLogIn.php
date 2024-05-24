@@ -5,14 +5,16 @@ session_start();
     $login = trim($_POST['logins']);
     $pass = trim($_POST['password']);
 
-    $queryUser = mysqli_fetch_array(mysqli_query($conn, "SELECT * FROM users WHERE user_login = '$login'"));
+    $queryUser = mysqli_query($conn, "SELECT * FROM users WHERE user_login = '$login'");
     
     
-    if(count($queryUser) != 0){
+    if(mysqli_num_rows($queryUser) != 0){
+        $queryUser = mysqli_fetch_array($queryUser);
         // setcookie('id', $queryUser['user_id'], time()+3600, '/');
-        $user = mysqli_fetch_array(mysqli_query($conn, "SELECT * FROM users WHERE user_login = '$login' and user_password = '$pass'"));
+        $user = mysqli_query($conn, "SELECT * FROM users WHERE user_login = '$login' and user_password = '$pass'");
 
-        if($user != false){
+        if(mysqli_num_rows($user) != 0){
+            $user = mysqli_fetch_array($user);
             $name = $queryUser["user_name"];
             $login = $queryUser["user_login"];
             $pass = $queryUser["user_password"];
@@ -45,6 +47,7 @@ session_start();
                 header("Location: admin/index.php?page=users");
             }
             else{
+                $_SESSION['mess'] = "Вы вошли как покупатель";
                 header("Location: account.php");
             }
         }
@@ -55,6 +58,9 @@ session_start();
             else{
                 $_SESSION['checkPass'] ++;
             }
+            $_SESSION['mess'] = "Не правильный пароль!";
+                echo "<script>alert('Не правильный пароль!');
+                location.href='index.php';</script>";
             header("Location: index.php");
         }
     }

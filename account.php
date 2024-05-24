@@ -24,39 +24,44 @@
             if(isset($_GET['page']) AND $_GET['page']=='orders'){
                 $numOrders = mysqli_fetch_all(mysqli_query($conn, "SELECT DISTINCT order_id FROM orders"));
                 $query;
-                $queryNum = mysqli_fetch_all(mysqli_query($conn, "SELECT order_id, item_id, jew_name, jew_price, order_date, order_get FROM `item` JOIN jewelery ON jewelery.jew_id=item.item_jew JOIN orders ON orders.order_id=item.item_order where order_user=".$idishka.";"));
                 echo "<div class = 'yourOrders'>";
+                $queryNum = mysqli_fetch_all(mysqli_query($conn, "SELECT order_id, order_get order_sum FROM `orders` where order_user=".$idishka));
                     if(count($queryNum)!=0){
-                        $num = $queryNum[0];
-                        foreach($numOrders as $num){
-                            echo " <div class = 'oneOrders'>";
-                            $query = mysqli_fetch_all(mysqli_query($conn, "SELECT order_id, item_id, jew_name, jew_price, order_date, order_get FROM `item` JOIN jewelery ON jewelery.jew_id=item.item_jew JOIN orders ON orders.order_id=item.item_order where order_user=".$idishka." AND order_id = ".$num[0]." ;"));
-                            // print_r($query);
-                            $amount = count($query)-1;
+                        $numO = $queryNum[0];
+                        $query_order = mysqli_fetch_all(mysqli_query($conn, "SELECT order_id,order_date, order_get, order_sum FROM `orders` where order_user=".$idishka));
+                        foreach($query_order as $qo){
                             $count = 1;
                             $sumPrice = 0;
-
-                            echo "<p class='numbers'> Заказ номер №$num[0] </p>";
-                            foreach($query as $q){
+                            $amount = count($query_order)-1;
+                            echo "<p class='numbers'> Заказ номер №$qo[0] </p>";
                             echo "<div class='orderOne'>";
-                            echo "<p class = 'namePos'>$q[2]</p>";
-                            echo "<p class = 'pricePos'>Цена : $q[3]</p>";
-                            echo "<p class = 'orderPos'> Дата заказа : $q[4]</p>";
-                            echo "<p class = 'deliveryPos'> Дата доставки : $q[5]</p>";
-                            $sumPrice+=$q[3];
+
+                            $query_item_order = mysqli_fetch_all(mysqli_query($conn, "SELECT `item_id`, `item_jew`, `item_order`, `amount`, jewelery.jew_name, jewelery.jew_price, jewelery.jew_img FROM `item` JOIN jewelery ON jewelery.jew_id=item.item_jew JOIN orders ON orders.order_id=item.item_order WHERE item_order=".$qo[0]));
+                            foreach($query_item_order as $qio){
+                                echo "<br>";
+                                echo "<p class = 'namePos'>$qio[4]</p>";
+                                echo "<p class = 'pricePos'>Цена : $qio[5]</p>";
+                                echo "<p class = 'pricePos'>Количество : $qio[3]</p>";
+                                echo "<p class = 'orderPos'> Дата заказа : $qo[1]</p>";
+                                echo "<p class = 'deliveryPos'> Дата доставки : $qo[2]</p>";
+                                $sumPrice+=$qio[5]*$qio[3];
+                            }
                             if($count == $amount){
                                 echo "</div>";
                                 $count++;
                             }else{
                                 echo "</div>";
                                 echo "<p class = 'sumPrice'>Сумма заказа : $sumPrice</p>";
-                            }}
-                            
-
+                            }
+                        }
+                            if($count == $amount){
+                                echo "</div>";
+                                $count++;
+                            }else{
+                                echo "</div>";
+                            }
 
                             echo "</div>";
-                        }
-                    // echo "</div>";
                     }
                     else{
                         echo "<span id = ''> У вас пока нет заказов. Что бы сделать заказ перейдите к <a href='catalog.php'> каталогу</a>.</span>";
@@ -130,7 +135,7 @@
                         }
                     }
                     echo "</div>";
-                    echo "<div id='sumAllCart'><span>СУММА КОРЗИНЫ : &nbsp;&nbsp;&nbsp; $sumCart &nbsp; &#8381</span></div>";
+                    echo "<div id='sumAllCart'><span>СУММА КОРЗИНЫ : &nbsp;&nbsp;&nbsp; $sumCart &nbsp; &#8381</span> <a href='buy.php' id='buyCartUser'>Купить</a></div>";
                 }
                 else{ 
                     echo "В корзине хранятся неоплаченные товары";echo "</div>";
